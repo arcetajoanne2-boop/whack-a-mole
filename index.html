@@ -1,15 +1,26 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Whack-A-Mole</title>
+</head>
+<body>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-#wam{font-family:'Nunito',sans-serif;width:100%;max-width:380px;margin:0 auto;border-radius:28px;overflow:hidden;min-height:640px;position:relative;user-select:none;background:#b8e4a0}
+html,body{width:100%;height:100%;overflow:hidden;background:#5bcff5}
+#wam{font-family:'Nunito',sans-serif;width:100%;max-width:480px;margin:0 auto;border-radius:0;overflow:hidden;min-height:100vh;min-height:100dvh;position:relative;user-select:none;background:#b8e4a0}
 
 /* ── SCREENS ── */
 .scr{display:none;width:100%;flex-direction:column;align-items:center}
 .scr.on{display:flex}
 
 /* ── START ── */
-#s-start{min-height:640px;background:linear-gradient(180deg,#5bcff5 0%,#a8e6cf 55%,#7bc67e 100%);justify-content:center;padding:0 28px}
+#s-start{min-height:100vh;min-height:100dvh;background:linear-gradient(180deg,#5bcff5 0%,#a8e6cf 55%,#7bc67e 100%);justify-content:center;padding:0 28px;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
 .st-logo{font-size:46px;font-weight:900;color:#fff;text-shadow:0 4px 0 #2e7d32,0 8px 16px rgba(0,0,0,.25);letter-spacing:-1px;text-align:center;line-height:1;margin-top:32px}
 .st-sub{font-size:14px;font-weight:800;color:rgba(255,255,255,.85);margin-top:6px;text-align:center}
 .hero-mole{margin:18px auto 0;width:110px;height:110px}
@@ -22,7 +33,7 @@
 .sdg-badge{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.22);border:1.5px solid rgba(255,255,255,.4);border-radius:50px;padding:7px 16px;margin-top:20px;font-size:12px;font-weight:800;color:#fff}
 
 /* ── GAME SCREEN ── */
-#s-game{min-height:640px;background:linear-gradient(180deg,#5bcff5 0%,#8de0a0 45%,#6abf6e 100%)}
+#s-game{min-height:100vh;min-height:100dvh;background:linear-gradient(180deg,#5bcff5 0%,#8de0a0 45%,#6abf6e 100%)}
 
 /* HUD bar */
 .hud{width:100%;padding:10px 14px 8px;display:flex;align-items:center;justify-content:space-between;gap:6px}
@@ -120,13 +131,13 @@
 .sdg-text{font-size:13px;font-weight:900;color:#2e7d32;line-height:1.2}
 
 /* PAUSE overlay */
-.pause-ov{display:none;position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:60;align-items:center;justify-content:center;flex-direction:column;gap:14px;border-radius:28px}
+.pause-ov{display:none;position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:60;align-items:center;justify-content:center;flex-direction:column;gap:14px;border-radius:0}
 .pause-ov.on{display:flex}
 .pause-card{background:#fff;border-radius:24px;padding:28px 32px;display:flex;flex-direction:column;align-items:center;gap:12px;min-width:220px}
 .pause-title{font-size:30px;font-weight:900;color:#2e7d32}
 
 /* RESULT */
-#s-result{min-height:640px;background:linear-gradient(180deg,#1a237e 0%,#283593 45%,#1565c0 100%);justify-content:center;padding:36px 28px 24px;gap:0}
+#s-result{min-height:100vh;min-height:100dvh;background:linear-gradient(180deg,#1a237e 0%,#283593 45%,#1565c0 100%);justify-content:center;padding:36px 28px 24px;padding-top:max(36px,env(safe-area-inset-top));padding-bottom:max(24px,env(safe-area-inset-bottom));gap:0}
 .res-title{font-size:42px;font-weight:900;color:#fff;text-shadow:0 3px 0 #0d47a1;letter-spacing:-1px;text-align:center}
 .res-stars{display:flex;gap:8px;margin:12px 0 8px}
 .star{font-size:38px;opacity:.2;transition:opacity .3s,transform .3s}
@@ -143,7 +154,7 @@
 .gbtn-h{background:linear-gradient(135deg,#1e88e5,#1565c0);color:#fff;flex:1}
 
 /* HOW overlay */
-.how-ov{display:none;position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:70;align-items:center;justify-content:center;border-radius:28px}
+.how-ov{display:none;position:absolute;inset:0;background:rgba(0,0,0,.72);z-index:70;align-items:center;justify-content:center;border-radius:0}
 .how-ov.on{display:flex}
 .how-card{background:#fff;border-radius:22px;padding:24px;width:88%;box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .how-h{font-size:21px;font-weight:900;color:#1565c0;margin-bottom:14px}
@@ -800,3 +811,5 @@ window.closeHow=function(){document.getElementById('how-ov').classList.remove('o
 window.showBest=function(){alert('🏆 Best Score: '+bestScore+' pts');};
 })();
 </script>
+</body>
+</html>
